@@ -1,0 +1,120 @@
+section {
+    @include flexLayout;
+    flex-direction: column;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 96%;
+    height: calc(91vh - 12rem);
+    background-color: white;
+    border-radius: 20px;
+}
+
+.setupPayBox {
+    width: 700px;
+    height: 600px;
+
+    >div:nth-child(1) {
+        @include flexLayout;
+        justify-content: flex-start;
+        height: 40px;
+        font-size: 16px;
+        font-weight: bolder;
+    }
+
+    >div:nth-child(2) {
+        @include flexLayout;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 560px;
+        flex-direction: row;
+
+        .setupPayHandleBox {
+            width: 50%;
+            height: 50%;
+        }
+
+        .setupPayHandleBox {
+            @include flexLayout;
+            flex-direction: column;
+
+            >div {
+                @include flexLayout;
+                width: 100%;
+
+
+                >p {
+                    width: 25%;
+                    height: 100%;
+
+                    >span {
+                        @include flexLayout;
+                        width: 35px;
+                        height: 18px;
+                        border: 1px solid rgba($color: #a9a9a9, $alpha: 0.7);
+                        border-radius: 5px;
+                        user-select: none;
+                    }
+                }
+
+                >div {
+                    @include flexLayout;
+                    align-items: flex-start;
+                    position: relative;
+                    flex: 1;
+                    height: 100%;
+
+                    >input {
+                        padding-left: 3px;
+                        height: 25px;
+                        outline: none;
+                    }
+
+                    >img {
+                        width: 87%;
+                        height: 152px;
+                    }
+                }
+            }
+
+            >div:nth-child(1) {
+                height: 50px;
+            }
+
+            >div:nth-child(2) {
+                height: 200px;
+            }
+        }
+    }
+}
+
+.coverInput {
+    position: absolute;
+    width: 100%;
+    height: 100% !important;
+    opacity: 0;
+}
+
+.wechatSetup {
+    height: 50px;
+    @include flexLayout;
+    justify-content: flex-start;
+    width: 700px;
+    font-size: 12px;
+
+    >input {
+        padding-left: 3px;
+        height: 25px;
+        outline: none;
+    }
+
+    >span {
+        @include flexLayout;
+        width: 35px;
+        height: 18px;
+        border: 1px solid rgba($color: #a9a9a9, $alpha: 0.7);
+        border-radius: 5px;
+        user-select: none;
+        margin-left: 10px;
+    }
+}

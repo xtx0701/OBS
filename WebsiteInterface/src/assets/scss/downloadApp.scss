@@ -1,0 +1,272 @@
+$color: orange,
+    black,
+    rgba($color: #808080, $alpha: 1);
+$height: 10%,
+    11%,
+    12%;
+
+.downloadAppBackground {
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    width: 100vw;
+    min-width: 1200px;
+    height: 100vh;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    @include flexLayout;
+    user-select: none;
+
+    .downloadAppBox {
+        width: 870px;
+        height: 690px;
+
+        .downloadAppBoxTitle {
+            @include flexLayout;
+            flex-direction: row;
+            justify-content: flex-start;
+            background-color: white;
+            width: 100%;
+            height: 27px;
+            $span_width: 3%,
+            15%,
+            82%;
+
+            @for $i from 1 through 3 {
+                >span:nth-child(#{$i}) {
+                    @include flexLayout;
+
+                    @if $i==2 {
+                        justify-content: flex-start;
+                    }
+
+                    @if $i==3 {
+                        justify-content: flex-end;
+                        padding-right: 15px;
+                    }
+
+                    width: nth($span_width, $i);
+
+                    >img {
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+            }
+        }
+
+        >div:nth-child(2) {
+            height: 250px;
+            position: relative;
+
+            >span {
+                position: absolute;
+                color: white;
+                top: 162px;
+                left: 660px;
+            }
+
+            >img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .downloadAppContent {
+            width: 100%;
+            height: 414px;
+            @include flexLayout;
+
+            .leftImage {
+                @include flexLayout;
+                height: 100%;
+                width: 385px;
+                background-color: white;
+                justify-content: flex-start;
+                padding-bottom: 107px;
+                padding-left: 5px;
+
+                >img {
+                    position: relative;
+                    z-index: 300;
+                }
+            }
+
+            .rightDownload {
+                background-color: white;
+                @include flexLayout;
+                flex-direction: column;
+                align-items: flex-start;
+                height: 100%;
+                flex: 1;
+
+
+                .download {
+                    height: 100%;
+                    @include flexLayout;
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    @for $i from 1 through 3 {
+                        >p:nth-child(#{$i}) {
+                            width: 86%;
+                            @include flexLayout;
+                            justify-content: start;
+                            height: nth($height, $i);
+                            color: nth($color, $i);
+
+                            @if $i==2 {
+                                font-size: 12px;
+                                font-weight: bolder;
+                            }
+
+                            @if $i==3 {
+                                padding-left: 10px;
+                            }
+
+                        }
+                    }
+
+                    >div {
+                        @include flexLayout;
+                    }
+
+                    >div:nth-child(4) {
+                        justify-content: space-between;
+                        font-weight: bolder;
+                        padding-left: 10px;
+                        width: 69%;
+                        height: 80px;
+
+                        >p:nth-child(1) {
+                            >span {
+                                color: orange;
+                                font-size: 22px;
+                            }
+                        }
+
+                        >p:nth-child(2) {
+                            color: orange;
+
+                            >span {
+                                color: rgba($color: #808080, $alpha: 1);
+                                text-decoration: line-through;
+                                font-weight: 100;
+                                position: relative;
+                                left: 10px;
+                                font-size: 12.5px;
+                            }
+                        }
+                    }
+
+                    >div:nth-child(5) {
+                        width: 83%;
+                        height: 138px;
+                        justify-content: space-between;
+                        padding: 0 0 33px 10px;
+
+                        >span {
+                            @include flexLayout;
+                            background-color: #1e90ff;
+                            height: 42px;
+                            width: 150px;
+                            font-size: 13px;
+                            color: white;
+                        }
+
+
+                        >span:nth-child(1):hover {
+                            background-color: #4682b4;
+                            cursor: pointer;
+                        }
+
+                        >span:nth-child(2):hover {
+                            background-color: #ababab;
+                            cursor: no-drop;
+                        }
+
+                        >span:nth-child(2) {
+                            background-color: #808080;
+                        }
+                    }
+                }
+
+                .noDownload {
+                    >div {
+                        width: 81%;
+                    }
+
+                    >div:nth-child(1) {
+                        height: 80px;
+                        font-weight: bolder;
+
+                        >span {
+                            @include flexLayout;
+                            justify-content: flex-start;
+                            width: 60px;
+                            height: 35px;
+                            font-size: 12px;
+                            font-weight: bolder;
+                        }
+
+                        >p {
+                            color: rgba($color: #808080, $alpha: 1);
+                        }
+                    }
+
+                    >div:nth-child(2) {
+                        height: 170px;
+                        font-weight: bolder;
+
+                        >p {
+                            color: rgba($color: #808080, $alpha: 1);
+                        }
+
+                        >div {
+                            margin-top: 20px;
+
+                            >select {
+                                width: 250px;
+                                height: 30px;
+                                margin-top: 6px;
+                                outline: none;
+                            }
+                        }
+                    }
+
+                    >div:nth-child(3) {
+                        height: 110px;
+                        @include flexLayout;
+                        justify-content: space-between;
+                        align-items: flex-start;
+
+                        >div:hover {
+                            background-color: #4682b4;
+                            cursor: pointer;
+                        }
+
+                        >div {
+                            @include flexLayout;
+                            background-color: #1e90ff;
+                            position: relative;
+                            color: white;
+                            height: 40px;
+                            width: 110px;
+
+                            >span {
+                                @include flexLayout;
+                                position: absolute;
+                                background-color: #ff894b;
+                                width: 90px;
+                                height: 25px;
+                                top: -15px;
+                                left: 50px;
+                                z-index: 2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

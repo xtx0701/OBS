@@ -1,0 +1,61 @@
+.discountShowToast {
+    background-color: white;
+    border: 1px solid grey;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 430px;
+    height: 165px;
+    z-index: 500;
+    box-shadow: 0 2px 27px 6px rgba(0, 0, 0, 0.12);
+
+    .discountShowToasttitle {
+        @include flexLayout;
+        justify-content: flex-start;
+
+        padding-left: 3px;
+        width: 100%;
+        height: 30px;
+        font-size: 13px;
+        color: black;
+
+        >span {
+            @include flexLayout;
+            justify-content: flex-end;
+            width: 290px;
+
+            >img {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+
+    >div:nth-child(2) {
+        @include flexLayout;
+        height: 75px;
+        padding-right: 5px;
+    }
+
+    >div:nth-child(3) {
+        background-color: #f0f0f0;
+        height: 58px;
+
+        >span {
+            @include flexLayout;
+            width: 95px;
+            height: 30px;
+            background-color: #e1e1e1;
+            position: relative;
+            left: 320px;
+            top: 15px;
+            outline: 1px solid #808080;
+        }
+
+        >span:hover {
+            outline: 1px solid #1e90ff;
+            background-color: rgba($color: #1e90ff, $alpha: 0.1);
+        }
+    }
+}

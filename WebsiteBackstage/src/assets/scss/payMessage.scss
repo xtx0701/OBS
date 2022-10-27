@@ -1,0 +1,120 @@
+.payMessageBox {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 96%;
+    height: calc(91vh - 12rem);
+    background-color: white;
+    border-radius: 20px;
+
+    .payMessageHandleBar {
+        display: flex;
+        height: 60px;
+        border-radius: 20px 20px 0 0;
+        color: grey;
+
+        >li {
+            list-style: none;
+            height: 100%;
+            @include flexLayout;
+            user-select: none;
+        }
+
+        >li:nth-child(1),
+        li:nth-child(2) {
+            width: 18%;
+            font-size: 14px;
+
+            >input {
+                height: 22px;
+                width: 150px;
+                margin-left: 10px;
+                border: 1px solid rgba($color: #c0c0c0, $alpha: 0.7);
+                border-radius: 3px;
+                padding-left: 5px;
+                outline: none;
+            }
+        }
+
+        >li:nth-child(3) {
+            justify-content: space-around;
+            width: 20%;
+
+            >span {
+                @include flexLayout;
+                width: 35%;
+                height: 55%;
+                color: white;
+
+                >img {
+                    width: 15px;
+                    height: 15px;
+                    margin-right: 10px;
+                }
+            }
+
+            >span:nth-child(1) {
+                background-color: #409eff;
+            }
+
+            >span:nth-child(2) {
+                background-color: #909399;
+                margin-right: 20px;
+            }
+        }
+    }
+
+    $li_width: 12%, 3%, 13%, 7%, 10%, 23%, 19%, 13%;
+
+    .payMessageDataBox {
+        @include flexLayout;
+        flex-direction: row;
+        list-style: none;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 96%;
+        height: 50px;
+
+        @for $i from 1 through 8 {
+            >li:nth-child(#{$i}) {
+                @include flexLayout;
+                justify-content: flex-start;
+                height: 100%;
+                width: nth($li_width, $i);
+                color: grey;
+
+                @if $i==4 {
+                    @include flexLayout;
+
+                    >span {
+                        @include flexLayout;
+                        width: 50%;
+                        height: 50%;
+                        background-color: #f4f4f5;
+                        color: #9e9db8;
+                        font-weight: bolder;
+                        border-radius: 5px;
+                        border: 1px solid gery;
+                        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+                    }
+                }
+            }
+        }
+    }
+
+    .payMessageDataBox:nth-child(2) {
+        color: grey;
+        font-weight: bolder;
+    }
+
+    .payMessageDataBox:nth-child(n + 3) {
+
+        >li:nth-child(2),
+        li:nth-child(5) {
+            color: black;
+            font-size: 13px;
+            font-weight: bolder;
+        }
+    }
+}

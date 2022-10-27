@@ -1,0 +1,134 @@
+.indexProgressBarBox {
+    @include flexLayout;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    position: fixed;
+    z-index: 800;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba($color: #808080, $alpha: 0.6);
+    user-select: none;
+
+    .title {
+        @include flexLayout;
+        width: 100%;
+        height: 15%;
+        justify-content: flex-start;
+
+        >span {
+            height: 100%;
+        }
+
+        >span:nth-child(1) {
+            @include flexLayout;
+            width: 13%;
+        }
+
+        >span:nth-child(2) {
+            @include flexLayout;
+            flex: 1;
+            justify-content: flex-end;
+            padding-right: 10px;
+
+            >img {
+                width: 15px;
+                height: 15px;
+
+            }
+        }
+    }
+
+    .content {
+        height: 20%;
+        width: 90%;
+        font-size: 25px;
+        @include flexLayout;
+        justify-content: flex-start;
+        font-weight: bolder;
+    }
+
+    .progress {
+        @include flexLayout;
+        height: 30%;
+        width: 90%;
+
+        >div {
+            width: 100%;
+            height: 70%;
+            background-color: #e6e6e6;
+
+            @keyframes progress {
+                0% {
+                    width: 0px;
+                }
+
+                100% {
+                    width: 100%;
+                }
+            }
+
+            @keyframes pause {
+                0% {
+                    width: 0px;
+                }
+
+                30% {
+                    width: 30%;
+                }
+
+                35% {
+                    width: 30%;
+                }
+
+                60% {
+                    width: 60%;
+                }
+
+                65% {
+                    width: 60%;
+                }
+
+                100% {
+                    width: 100%;
+                }
+            }
+
+            >span {
+                display: inline-block;
+                background-color: #09a92b;
+                width: 20px;
+                height: 100%;
+                animation-name: progress;
+                animation-fill-mode: forwards;
+            }
+
+            .pause {
+                animation-name: pause;
+            }
+        }
+
+    }
+
+    >div:nth-child(4) {
+        flex: 1;
+        @include flexLayout;
+        width: 90%;
+
+        >span {
+            @include flexLayout;
+            background-color: #2090ff;
+            color: white;
+            width: 130px;
+            height: 40px;
+        }
+
+        >span:hover {
+            background-color: #4682b4;
+            cursor: pointer;
+        }
+    }
+}
